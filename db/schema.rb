@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_28_191101) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_28_201752) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_191101) do
     t.index ["user_id"], name: "index_horses_on_user_id"
   end
 
+  create_table "sales", force: :cascade do |t|
+    t.integer "price"
+    t.date "date"
+    t.bigint "horse_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["horse_id"], name: "index_sales_on_horse_id"
+    t.index ["user_id"], name: "index_sales_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -40,4 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_191101) do
   end
 
   add_foreign_key "horses", "users"
+  add_foreign_key "sales", "horses"
+  add_foreign_key "sales", "users"
 end
