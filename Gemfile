@@ -79,3 +79,6 @@ end
 
 # Use gem devise for authentication
 gem "devise"
+
+# Use gem cludinary to host images
+gem "cloudinary"
