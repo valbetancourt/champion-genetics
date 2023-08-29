@@ -4,6 +4,14 @@
 <div class="card-product">
   <%= cl_image_tag @horse.photo.key %>
   <div class="card-product-infos">
+    <h3><%= @horse.name %></h3>
     <h2><%= @horse.category %></h2>
+    <h2><%= @horse.breed %></h2>
+    <h2><%= @horse.height %></h2>
+    <h2><%= @horse.pedigree %></h2>
+    <h2><%= @horse.accomplishments %></h2>
+    <h2><%= @horse.price %></h2>
   </div>
 </div>
+
+<%= button_to 'Back to index', horses_path, method: :get, class: "btn btn-light" %>

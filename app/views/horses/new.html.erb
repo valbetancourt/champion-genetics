@@ -1,12 +1,14 @@
 <h3>Add a new horse</h3>
 <div class="container">
 <%= simple_form_for(@horse) do |f| %>
-  <%= f.input :category %>
+  <%= f.input :name %>
+  <%= f.input :category, collection: Horse::CATEGORY %>
   <%= f.input :breed %>
   <%= f.input :height %>
   <%= f.input :pedigree %>
   <%= f.input :accomplishments %>
   <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
 </div>
