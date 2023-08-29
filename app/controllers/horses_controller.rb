@@ -10,9 +10,10 @@ class HorsesController < ApplicationController
   end
 
   def create
-    horse = Horse.new(horse_params)
-    horse.save
-    redirect_to horse_path(horse)
+    @horse = Horse.new(horse_params)
+    @horse.user = current_user
+    @horse.save
+    redirect_to horse_path(@horse)
   end
 
   def show
@@ -28,7 +29,7 @@ class HorsesController < ApplicationController
 
   def destroy
     @horse.destroy
-    redirect_to horses_path(horse), status: :see_other
+    redirect_to horses_path(@horse), status: :see_other
   end
 
   private
@@ -38,6 +39,6 @@ class HorsesController < ApplicationController
   end
 
   def horse_params
-    params.require(:horse).permit(:category, :breed, :height, :pedigree, :accomplishments, :price)
+    params.require(:horse).permit(:category, :breed, :height, :pedigree, :accomplishments, :price, :name, :photo)
   end
 end

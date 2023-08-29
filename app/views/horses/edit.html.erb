@@ -1,2 +1,9 @@
-<h1>Horses#edit</h1>
-<p>Find me in app/views/horses/edit.html.erb</p>
+<h3>Edit <%= @horse.name %></h3>
+
+<div class="container">
+<%= simple_form_for(@horse) do |f| %>
+  <%= f.input :accomplishments %>
+  <%= f.input :price %>
+  <%= f.submit %>
+<% end %>
+</div>
