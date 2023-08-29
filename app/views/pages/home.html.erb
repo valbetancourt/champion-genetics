@@ -1,2 +1,77 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dxk959tzt/image/upload/v1693326183/philippe-oursel-Jfk79d9MrHQ-unsplash_mtrhct.jpg);">
+  <div class="container">
+    <h1>Elevate Your Breeding Program with Top-Quality Genetics</h1>
+    <p>Find your next Champion</p>
+    <%= button_to "Browse Horses", horses_path, method: :get, class: "btn btn-flat" %>
+  </div>
+</div>
+<section class="d-flex flex-column banner-services">
+  <div class=" title-banner-services">
+  <h2>Need something done?</h2>
+  <p>Most viewed and all-time top-selling services</p>
+  </div>
+  <div class="services d-flex text-center">
+    <div class="service">
+      <i class="fa-solid fa-horse-head icon"></i>
+      <h2>Post a Horse</h2>
+      <p>Sell the genetics of your champion worldwide</p>
+    </div>
+    <div class="service">
+      <i class="fa-solid fa-medal icon"></i>
+      <h2>Choose your next Champion</h2>
+      <p>Browse through our Champions and find the one that suits the needs of your Breeding Program</p>
+    </div>
+    <div class="service">
+      <i class="fa-solid fa-credit-card icon"></i>
+      <h2>Pay safely</h2>
+      <p>Either if you buy or sell, we make payment methods easy and safe for you</p>
+    </div>
+    <div class="service">
+      <i class="fa-solid fa-headset icon"></i>
+      <h2>We're here to help</h2>
+      <p>If you need any assistance we've got a team 24/7 available to help you out</p>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h2>Browse Horses by category</h2>
+    <div class="categories">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dxk959tzt/image/upload/v1693333324/paul-chambers-m1uT_XHsTQM-unsplash_kprriz.jpg)">
+        <h3>Polo</h3>
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dxk959tzt/image/upload/v1693261515/development/pd6iqu1gnc7d05y35xrhcf2uo1zb.png)">
+        <h3>Showjumping</h3>
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dxk959tzt/image/upload/v1693333255/jeff-griffith-QAJ2H_nJqLo-unsplash_zotndg.jpg)">
+        <h3>Race horses</h3>
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dxk959tzt/image/upload/v1693333481/elisa-pitkanen-yZbdyAfaFo8-unsplash_ocob4k.jpg)">
+        <h3>Dressage</h3>
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dxk959tzt/image/upload/v1693333643/timothy-eberly-A1TvUdANrfg-unsplash_gos8ib.jpg)">
+        <h3>Western</h3>
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dxk959tzt/image/upload/v1693333406/sheila-swayze-UyCCGwLNM40-unsplash_mxwfvh.jpg)">
+        <h3>Trail Horses</h3>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="feature-horses d-flex flex-column">
+  <div class="feature-horses-title text-center p-4">
+    <h2>Featured Horses</h2>
+  </div>
+  <div class="cards d-flex justify-content-evenly">
+    <% @horses.each do |horse| %>
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body bg-white">
+          <h5 class="card-title"><%= %></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-flat">Go somewhere</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
