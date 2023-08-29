@@ -1,2 +1,9 @@
 <h1>Horses#show</h1>
 <p>Find me in app/views/horses/show.html.erb</p>
+
+<div class="card-product">
+  <%= cl_image_tag @horse.photo.key %>
+  <div class="card-product-infos">
+    <h2><%= @horse.category %></h2>
+  </div>
+</div>
