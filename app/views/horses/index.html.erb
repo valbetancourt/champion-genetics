@@ -1,9 +1,12 @@
 <h1>Available stallions</h1>
 <p>Find your next champion here!</p>
 
+<%= button_to 'Back to home', root_path, method: :get, class: "btn btn-flat mb-3" %>
+
 <% @horses.each do |horse| %>
   <div class="card-product">
     <%= cl_image_tag horse.photo.key %>
+      <%= button_to 'View horse', horse_path(horse), method: :get, class: "btn btn-flat" %>
     <div class="card-product-infos">
       <h3><%= horse.name %></h2>
       <h2><%= horse.category %></h2>
