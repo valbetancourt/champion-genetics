@@ -65,13 +65,18 @@
   <div class="cards d-flex justify-content-evenly">
     <% @horses.each do |horse| %>
       <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+        <%= image_tag horse.photo, class: "rounded-top" %>
         <div class="card-body bg-white">
-          <h5 class="card-title"><%= %></h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-flat">Go somewhere</a>
+          <h3 class="card-title"><%= horse.name %></h3>
+          <p class="card-text"><%= horse.accomplishments %></p>
+          <%= button_to 'View horse', horse_path(horse), method: :get, class: "btn btn-flat" %>
         </div>
       </div>
     <% end %>
+  </div>
+</section>
+<section>
+  <div class="metrics">
+  
   </div>
 </section>
