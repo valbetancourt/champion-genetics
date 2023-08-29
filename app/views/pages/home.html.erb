@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Elevate Your Breeding Program with Top-Quality Genetics</h1>
     <p>Find your next Champion</p>
-    <a class="btn btn-flat" href="#">Browse Horses</a>
+    <%= button_to "Browse Horses", horses_path, method: :get, class: "btn btn-flat" %>
   </div>
 </div>
 <section class="d-flex flex-column banner-services">
@@ -58,29 +58,20 @@
     </div>
   </div>
 </section>
-<section class="feature-horses d-flex container">
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+<section class="feature-horses d-flex flex-column">
+  <div class="feature-horses-title text-center p-4">
+    <h2>Featured Horses</h2>
   </div>
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+  <div class="cards d-flex justify-content-evenly">
+    <% @horses.each do |horse| %>
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body bg-white">
+          <h5 class="card-title"><%= %></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-flat">Go somewhere</a>
+        </div>
+      </div>
+    <% end %>
   </div>
 </section>
