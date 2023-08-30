@@ -82,3 +82,6 @@ gem "devise"
 
 # Use gem cludinary to host images
 gem "cloudinary"
+
+# Use gem geocoder to host a map
+gem "geocoder"

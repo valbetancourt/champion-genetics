@@ -1,7 +1,6 @@
-<h1>Horses#show</h1>
-<p>Find me in app/views/horses/show.html.erb</p>
+<h3>Profile for <strong><%= @horse.name %></strong></h3>
 
-<div class="card-product">
+<div class="card-product mb-3">
   <%= cl_image_tag @horse.photo.key %>
   <div class="card-product-infos">
     <h3><%= @horse.name %></h3>
@@ -14,7 +13,7 @@
   </div>
 </div>
 
-<%= button_to 'Back to index', horses_path, method: :get, class: "btn btn-light" %>
+<%= button_to 'Back to index', horses_path, method: :get, class: "btn btn-flat" %>
 
 <% if @horse.user == current_user  %>
   <%= button_to 'Edit this horse', edit_horse_path(@horse), method: :get, class: "btn btn-light" %>

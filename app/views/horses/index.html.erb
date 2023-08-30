@@ -3,18 +3,21 @@
 
 <%= button_to 'Back to home', root_path, method: :get, class: "btn btn-flat mb-3" %>
 
-<% @horses.each do |horse| %>
-  <div class="card-product">
-    <%= cl_image_tag horse.photo.key %>
-      <%= button_to 'View horse', horse_path(horse), method: :get, class: "btn btn-flat" %>
-    <div class="card-product-infos">
-      <h3><%= horse.name %></h2>
-      <h2><%= horse.category %></h2>
-      <h2><%= horse.breed %></h2>
-      <h2><%= horse.height %></h2>
-      <h2><%= horse.pedigree %></h2>
-      <h2><%= horse.accomplishments %></h2>
-      <h2><%= horse.price %></h2>
-    </div>
+<div class="container">
+  <div class="row">
+    <% @horses.each do |horse| %>
+      <div class="col-4 mb-5 mt-5">
+        <div class="card h-100 mb-20 ">
+          <%= cl_image_tag horse.photo.key, class:"img-fluid img-resize"%>
+          <div class="bg-secondary info-position">
+            <%= link_to '', horse_path(horse), class: "fa-solid fa-magnifying-glass text-decoration-none text-black lupa-position" %>
+            <h3><%= horse.name %></h3> stro
+            <p><%= horse.category %></p>
+            <p><%= horse.price %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
+<i class="fa-solid fa-magnifying-glass"></i>
