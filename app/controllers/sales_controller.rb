@@ -1,24 +1,11 @@
 class SalesController < ApplicationController
-  def new
-    @sale = Sale.new
-    @horse = Horse.find(params[:horse_id])
+  def my_sales
+      @sales = Sale.where(user: current_user).all
   end
 
   def create
-    @sale = Sale.new(sale_params)
     @horse = Horse.find(params[:horse_id])
-    @sale.horse = @horse
-    @sale.user = current_user
-    if @sale.save
-      redirect_to horse_path(@horse)
-    else
-      render :new
-    end
-  end
-
-  private
-
-  def sale_params
-    params.require(:sale).permit(:price, :date) # Hay que agregar horse y user como referencias pero no se como
+    Sale.create(horse_id: @horse.id, user_id: current_user.id, price: @horse.price, date: Date.today)
+    redirect_to my_sales_path
   end
 end
