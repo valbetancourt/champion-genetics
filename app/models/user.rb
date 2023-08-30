@@ -7,7 +7,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one_attached :photo
 
-  def user_params
-    params.require(:user).permit(:email, :encrypted_password, :photo)
-  end
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

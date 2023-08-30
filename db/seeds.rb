@@ -5,13 +5,13 @@ User.destroy_all
 #######################################   USERS     #########################################################
 puts "creando usuario 1"
 file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1689560078/lmywiilsiprsptawr2wl.jpg")
-user1 = User.new(email: "juan@gmail.com", password: "123456")
+user1 = User.new(email: "juan@gmail.com", password: "123456", address: "Av. Jorge Newbery 3075, Buenos Aires, Argentina")
 user1.photo.attach(io: file, filename: "juan.jpg", content_type: "image/jpg")
 user1.save!
 
 puts "creando usuario 2"
 file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1689605663/j1xwmqtjj5i9ibi6ric9.jpg")
-user2 = User.new(email: "valeria@gmail.com", password: "123456")
+user2 = User.new(email: "valeria@gmail.com", password: "123456", address: "Napoles 333 Col. Altavista, Monterrey, Nuevo Leon, Mexico")
 user2.photo.attach(io: file, filename: "valeria.jpg", content_type: "image/jpg")
 user2.save!
 
