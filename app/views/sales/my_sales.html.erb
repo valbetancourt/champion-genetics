@@ -1,0 +1,9 @@
+<% @sales.each do |sale| %>
+  <div class="card-product">
+    <div class="card-product-infos">
+      <h3><%= sale.price %></h2>
+      <h2><%= sale.date %></h2>
+      <h2><%= sale.user_id %></h2>
+    </div>
+  </div>
+<% end %>

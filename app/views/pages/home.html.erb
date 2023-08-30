@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dxk959tzt/image/upload/v1693326183/philippe-oursel-Jfk79d9MrHQ-unsplash_mtrhct.jpg);">
   <div class="container">
     <h1>Elevate Your Breeding Program with Top-Quality Genetics</h1>
-    <p>Find your next Champion</p>
+    <p>Breed your next Champion</p>
     <%= button_to "Browse Horses", horses_path, method: :get, class: "btn btn-flat" %>
   </div>
 </div>
@@ -63,7 +63,7 @@
     <h2>Featured Horses</h2>
   </div>
   <div class="cards d-flex justify-content-evenly">
-    <% @horses.each do |horse| %>
+    <% @horses_sample.each do |horse| %>
       <div class="card" style="width: 18rem;">
         <%= image_tag horse.photo, class: "rounded-top" %>
         <div class="card-body bg-white">
@@ -76,7 +76,18 @@
   </div>
 </section>
 <section>
-  <div class="metrics">
-  
+  <div class="metrics d-flex justify-content-around align-center">
+    <div class="metric">
+    <h2>Horses published</h2>
+    <p class="text-center"><%= @horses.count %></p>
+    </div>
+    <div class="metric">
+    <h2>Users registered</h2>
+    <p class="text-center"><%= @users.count %></p>
+    </div>
+    <div class="metric">
+    <h2>Sales done</h2>
+    <p class="text-center"><%= @sales.count %></p>
+    </div>
   </div>
 </section>

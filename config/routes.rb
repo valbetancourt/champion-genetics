@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :horses do
-    resources :sales, only: [:new, :create]
+    resources :sales, only: %i[create]
   end
+
+  get "my_sales", to: "sales#my_sales"
 end
