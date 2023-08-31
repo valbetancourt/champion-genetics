@@ -3,21 +3,20 @@
 
 <%= button_to 'Back to home', root_path, method: :get, class: "btn btn-flat mb-3" %>
 
-<div class="container">
+<div class="container mb-5 p-3">
   <div class="row">
     <% @horses.each do |horse| %>
       <div class="col-4 mb-5 mt-5">
         <div class="card h-100 mb-20 ">
           <%= cl_image_tag horse.photo.key, class:"img-fluid img-resize"%>
-          <div class="bg-secondary info-position">
-            <%= link_to '', horse_path(horse), class: "fa-solid fa-magnifying-glass text-decoration-none text-black lupa-position" %>
-            <h3><%= horse.name %></h3> stro
+          <div class="info-position">
+            <%= link_to '', horse_path(horse), class: "fa-solid fa-magnifying-glass text-decoration-none text-white lupa-position" %>
+            <h3><strong><%= horse.name %></strong></h3>
             <p><%= horse.category %></p>
-            <p><%= horse.price %></p>
+            <p>$ <%= horse.price %> usd</p>
           </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-<i class="fa-solid fa-magnifying-glass"></i>

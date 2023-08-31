@@ -17,6 +17,14 @@ class HorsesController < ApplicationController
   end
 
   def show
+    @horse = Horse.find(params[:id])
+    @user = User.find_by(id: @horse.user_id)
+    # The `geocoded` scope filters only flats with coordinates
+    @markers =
+      [{
+        lat: @user.latitude,
+        lng: @user.longitude
+      }]
   end
 
   def edit
