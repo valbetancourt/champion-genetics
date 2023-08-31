@@ -75,19 +75,26 @@
     <% end %>
   </div>
 </section>
-<section>
-  <div class="metrics d-flex justify-content-around align-center">
-    <div class="metric">
-    <h2>Horses published</h2>
-    <p class="text-center"><%= @horses.count %></p>
+<section class="metrics-container d-flex gap-5 flex-wrap align-center justify-content-center mb-5 ">
+  <article>
+    <figure><img src="https://res.cloudinary.com/dxk959tzt/image/upload/v1693495856/pngfind.com-horse-png-594151_1_z6z6qx.png" alt=""></figure>
+    <div class="container text-center mt-3">
+      <h2>Horses published</h2>
+      <p><%= @horses.count %></p>
     </div>
-    <div class="metric">
-    <h2>Users registered</h2>
-    <p class="text-center"><%= @users.count %></p>
+  </article>
+    <article>
+    <figure><img src="https://res.cloudinary.com/dxk959tzt/image/upload/v1693496355/kisspng-horse-tack-equestrian-hunt-seat-horse-riding-5acb75a3c6ffd3.8767762615232833638151_ghdnn2.png" alt=""></figure>
+    <div class="container text-center mt-3">
+      <h2>Users registered</h2>
+      <p><%= @users.count %></p>
     </div>
-    <div class="metric">
-    <h2>Sales done</h2>
-    <p class="text-center"><%= @sales.count %></p>
+  </article>
+    <article>
+    <figure><img src="https://res.cloudinary.com/dxk959tzt/image/upload/v1693497136/jeff-griffith-PaIDqj8otls-unsplash-removebg-preview_dr8uuh.png" alt=""></figure>
+    <div class="container text-center mt-3">
+      <h2>Sales done</h2>
+      <p><%= @sales.count %></p>
     </div>
-  </div>
+  </article>
 </section>
