@@ -1,10 +1,30 @@
-<h1>Available stallions</h1>
-<p>Find your next champion here!</p>
+<p></p>
+<div class="heading heading-center divider-with-icon heading-divider">
+  <h3 class="section-title">STALLION LIST</h3>
+  <div class="divider">
+      <i class="fa fa-list-ul"></i>
+  </div>
+  <div class="d-flex justify-content-center gap-3">
+    <%= button_to 'Back to home', root_path, method: :get, class: "btn btn-flat mb-3" %>
+    <%= button_to 'Add a new horse', new_horse_path, method: :get, class: "btn btn-flat" %>
+  </div>
+</div>
 
-<%= button_to 'Back to home', root_path, method: :get, class: "btn btn-flat mb-3" %>
 
 <div class="container mb-5 p-3">
-  <div class="row">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: horses_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Type a keyword"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-flat" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row justify-content-center">
     <% @horses.each do |horse| %>
       <div class="col-4 mb-5 mt-5">
         <div class="card h-100 mb-20 ">

@@ -85,3 +85,6 @@ gem "cloudinary"
 
 # Use gem geocoder to host a map
 gem "geocoder"
+
+# pg_search gem
+gem "pg_search"

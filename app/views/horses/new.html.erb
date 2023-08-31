@@ -1,14 +1,26 @@
-<h3>Add a new horse</h3>
+<%= button_to 'Back to index', horses_path, method: :get, class: "btn btn-flat p-2 mt-2" %>
+
+<div class="heading heading-center divider-with-icon heading-divider">
+  <h3 class="section-title">ADD A NEW STALLION</h3>
+  <div class="divider">
+      <i class="fa fa-list-ul"></i>
+  </div>
+</div>
+
 <div class="container">
-<%= simple_form_for(@horse) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :category, collection: Horse::CATEGORY %>
-  <%= f.input :breed %>
-  <%= f.input :height %>
-  <%= f.input :pedigree %>
-  <%= f.input :accomplishments %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+  <div class="row justify-content-center">
+    <div class="col-6 mb-3">
+      <%= simple_form_for(@horse) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :category, collection: Horse::CATEGORY %>
+        <%= f.input :breed %>
+        <%= f.input :height %>
+        <%= f.input :pedigree %>
+        <%= f.input :accomplishments %>
+        <%= f.input :price %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit%>
+      <% end %>
+    </div>
+  </div>
 </div>
