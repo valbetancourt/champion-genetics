@@ -1,9 +1,19 @@
-<% @sales.each do |sale| %>
-  <div class="card-product">
-    <div class="card-product-infos">
-      <h3><%= sale.price %></h2>
-      <h2><%= sale.date %></h2>
-      <h2><%= sale.user_id %></h2>
+<h2 class="text-center m-5">My purchuses</h2>
+
+
+<div class="gap-3 row m-4 p-3 justify-content-center align-center">
+  <% @sales.each do |sale| %>
+  <div class="card-my-sales col-4 border justify-content-between" style="width: 18rem;">
+    <%= cl_image_tag sale.horse.photo.key, class: "card-img-top card-img-my-sales" %>
+    <div class="justify-content-between">
+        <h5 class="card-title"><%= sale.horse.name %></h5>
+        <p ><%= sale.price %></p>
+        <p ><%= sale.date %></p>
     </div>
   </div>
-<% end %>
+  <% end %>
+</div>
+
+<div class="container d-flex justify-content-center mb-5">
+  <%= button_to "Back to Horses", horses_path, method: :get, class: "btn btn-flat" %>
+</div>
