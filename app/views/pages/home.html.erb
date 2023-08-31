@@ -65,11 +65,11 @@
   <div class="cards d-flex justify-content-evenly">
     <% @horses_sample.each do |horse| %>
       <div class="card" style="width: 18rem;">
-        <%= image_tag horse.photo, class: "rounded-top" %>
+        <%= image_tag horse.photo, class: "rounded-top img-resize-2" %>
         <div class="card-body bg-white">
-          <h3 class="card-title"><%= horse.name %></h3>
+          <h3 class="card-title"><strong><%= horse.name %></strong></h3>
           <p class="card-text"><%= horse.accomplishments %></p>
-          <%= button_to 'View horse', horse_path(horse), method: :get, class: "btn btn-flat" %>
+          <%= button_to 'View horse', horse_path(horse), method: :get, class: "btn btn-flat btn-featured" %>
         </div>
       </div>
     <% end %>

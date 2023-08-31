@@ -3,6 +3,14 @@ class HorsesController < ApplicationController
 
   def index
     @horses = Horse.all
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        horses.name @@ :query
+        OR horses.category @@ :query
+      SQL
+      # @horses = @horses.where(sql_subquery, query: "%#{params[:query]}%")
+      @horses = Horse.search_by_name_and_category(params[:query])
+    end
   end
 
   def new
