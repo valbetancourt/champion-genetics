@@ -12,6 +12,10 @@
   border-radius: 5px;
 }
 
+.img-resize-2 {
+  height: 250px;
+}
+
 .lupa-position {
   font-size: 20px;
   display: flex;
@@ -71,3 +75,13 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.btn-featured {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  right: 75px;
+  top: 420px;
+}
+
