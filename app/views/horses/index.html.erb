@@ -5,7 +5,9 @@
       <i class="fa fa-list-ul"></i>
   </div>
   <div class="d-flex justify-content-center gap-3">
-    <%= button_to 'Back to home', root_path, method: :get, class: "btn btn-flat mb-3" %>
+    <%= link_to root_path, method: :get, class: "mb-3" do %>
+      <i class="fa-solid fa-house text-dark fs-2"></i>
+    <% end %>
     <%= button_to 'Add a new horse', new_horse_path, method: :get, class: "btn btn-flat" %>
   </div>
 </div>
