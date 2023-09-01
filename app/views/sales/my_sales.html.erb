@@ -1,5 +1,10 @@
-<h2 class="text-center m-5">My purchuses</h2>
-
+<P></P>
+<div class="heading heading-center divider-with-icon heading-divider">
+  <h3 class="section-title">MY PURCHASES</h3>
+  <div class="divider">
+      <i class="fa fa-list-ul"></i>
+  </div>
+</div>
 
 <div class="gap-3 row m-4 p-3 justify-content-center align-center">
   <% @sales.each do |sale| %>
@@ -7,7 +12,7 @@
     <%= cl_image_tag sale.horse.photo.key, class: "card-img-top card-img-my-sales" %>
     <div class="justify-content-between">
         <h5 class="card-title"><%= sale.horse.name %></h5>
-        <p ><%= sale.price %></p>
+        <p >$<%= sale.price %></p>
         <p ><%= sale.date %></p>
     </div>
   </div>

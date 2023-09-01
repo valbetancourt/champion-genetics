@@ -1,9 +1,30 @@
-<h3>Profile for <strong><%= @horse.name %></strong></h3>
+<p></p>
+<div class="heading heading-center divider-with-icon heading-divider">
+  <h3 class="section-title"><strong>PROFILE FOR <%= @horse.name.upcase %></strong></h3>
+  <div class="divider">
+      <i class="fa fa-list-ul"></i>
+  </div>
+  <div class="d-flex justify-content-center gap-3">
+      <%= link_to horses_path, method: :get, class: "mb-3" do%>
+        <i class="fa-solid fa-arrow-left text-dark fs-2"></i>
+      <% end %>
+      <% if @horse.user == current_user  %>
+        <%= link_to edit_horse_path(@horse), method: :get do %>
+          <i class="fa-solid fa-pencil text-dark fs-2"></i>
+        <% end %>
+        <%= link_to horse_path(@horse), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this horse?"} do %>
+          <i class="fa-solid fa-trash text-danger fs-2"></i>
+        <% end %>
+        <%#= link_to "Delete", horse_path(@horse), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this horse?"}, class: 'text-danger' %>
+        <% else %>
+        <%= button_to 'Buy this horse', horse_sales_path(@horse), method: :post, class: "btn btn-flat" %>
+      <% end %>
+  </div>
+</div>
 
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-9">
-      <%= button_to 'Back to index', horses_path, method: :get, class: "btn btn-flat mb-2" %>
       <div class="card-product mb-3">
         <%= cl_image_tag @horse.photo.key %>
         <div class="card-product-infos">
@@ -16,15 +37,6 @@
           <h2><%= @horse.price %></h2>
         </div>
       </div>
-
-
-      <% if @horse.user == current_user  %>
-        <%= button_to 'Edit this horse', edit_horse_path(@horse), method: :get, class: "btn btn-light" %>
-        <%= link_to "delete", horse_path(@horse), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this horse?"}, class: 'text-danger' %>
-        <% else %>
-        <%= button_to 'Buy this horse', horse_sales_path(@horse), method: :post, class: "btn btn-light" %>
-      <% end %>
-
       <div style="width: 100%; height: 600px;"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
