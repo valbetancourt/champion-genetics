@@ -5,8 +5,8 @@
     <%= button_to "Browse Horses", horses_path, method: :get, class: "btn btn-flat" %>
   </div>
 </div>
-<section class="d-flex flex-column banner-services">
-  <div class=" title-banner-services">
+<section class="d-flex flex-column banner-services p-5">
+  <div class=" title-banner-services mb-5">
   <h2>Need something done?</h2>
   <p>Most viewed and all-time top-selling services</p>
   </div>
@@ -68,6 +68,7 @@
         <%= image_tag horse.photo, class: "rounded-top img-resize-2" %>
         <div class="card-body bg-white">
           <h3 class="card-title"><strong><%= horse.name %></strong></h3>
+          <p class="card-text"><%= horse.category %></p>
           <p class="card-text"><%= horse.accomplishments %></p>
           <%= button_to 'View horse', horse_path(horse), method: :get, class: "btn btn-flat btn-featured" %>
         </div>
